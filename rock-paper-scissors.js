@@ -21,6 +21,14 @@ function chooseComputerMove() {
   }
 }
 
+function updateResults() {
+  localStorage.setItem('score', JSON.stringify(score));
+
+  document.querySelector('.js-result').innerHTML = `Player chose ${playerMove} and computer chose ${computerMove}. ${result}`;
+
+  document.querySelector('.js-score').innerHTML = `Wins: ${score.wins} Ties: ${score.ties} Losses: ${score.losses}`;
+}
+
 function playGame() {
   chooseComputerMove();
   
@@ -59,10 +67,5 @@ function playGame() {
     }   
   }
 
-  localStorage.setItem('score', JSON.stringify(score));
-
-  document.querySelector('.js-result').innerHTML = `Player chose ${playerMove} and computer chose ${computerMove}. ${result}`;
-
-  document.querySelector('.js-score').innerHTML = `Wins: ${score.wins} Ties: ${score.ties} Losses: ${score.losses}`;
+  updateResults();
 }
-

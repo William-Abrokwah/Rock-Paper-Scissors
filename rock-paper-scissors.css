@@ -18,6 +18,10 @@ body {
   margin-right: 20px;
 }
 
+.move-button:active {
+  background-color: rgb(73, 73, 73);
+}
+
 .move-icon {
   background-color: transparent;
   height: 50px;

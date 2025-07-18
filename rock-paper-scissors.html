@@ -11,7 +11,7 @@
   <body>
 
     <p class="title">Rock Paper Scissors<p>
-
+    
     <button onclick="
       playerMove = 'rock'; 
       playGame();
@@ -30,7 +30,13 @@
     <p class="js-result"></p>
     <p class="js-score"></p>
 
-    <button>Reset Score</button>
+    <button onclick="
+      score.wins = 0;
+      score.ties = 0;
+      score.losses = 0;
+
+      updateResults();
+    ">Reset Score</button>
     <script src="rock-paper-scissors.js"></script>
   </body>
 </html>
