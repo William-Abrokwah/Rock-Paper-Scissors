@@ -13,32 +13,35 @@ function chooseComputerMove() {
   }
 }
 
-function chooseWinner(playerMove, computerMove) {
-  console.log(`Player chose ${playerMove} and computer chose ${computerMove}`);
+function playGame() {
+  chooseComputerMove();
   
   if (playerMove === 'rock') {
     if (computerMove === 'rock') {
-      console.log('Tie!');
+      result = 'Tie!';
     } else if (computerMove === 'paper') {
-      console.log('You lose!');
+      result = 'You lose!';
     } else if (computerMove === 'scissors') {
-      console.log('You win!');
+      result = 'You win!'; 
     }
   } else if (playerMove === 'paper') {
     if (computerMove === 'rock') {
-      console.log('You win!');
+      result = 'You win!'; 
     } else if (computerMove === 'paper') {
-      console.log('Tie!');
+      result = 'Tie!';
     } else if (computerMove === 'scissors') {
-      console.log('You lose!');
+      result = 'You lose!';
     }
   } else if (playerMove === 'scissors') {
     if (computerMove === 'rock') {
-      console.log('You lose!');
+      result = 'You lose!';
     } else if (computerMove === 'paper') {
-      console.log('You win!');
+      result = 'You win!'; 
     } else if (computerMove === 'scissors') {
-      console.log('Tie!');
+      result = 'Tie!';
     }   
   }
+
+  console.log(`Player chose ${playerMove} and computer chose ${computerMove}`);
+  console.log(`${result}`);
 }
