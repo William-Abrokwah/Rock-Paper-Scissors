@@ -42,6 +42,7 @@ function playGame() {
     }   
   }
 
-  console.log(`Player chose ${playerMove} and computer chose ${computerMove}`);
-  console.log(`${result}`);
+  document.querySelector('.js-result').innerHTML = `Player chose ${playerMove} and computer chose ${computerMove}. ${result}`;
+
+  document.querySelector('.js-score').innerHTML = `Wins: ${wins} Losses: ${losses}`;
 }
