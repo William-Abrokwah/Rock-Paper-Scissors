@@ -1,0 +1,28 @@
+body {
+  font-family: Arial;
+  background-color: black;
+  color: white;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.move-button {
+  background-color: black;
+  border: 2px white solid;
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+  margin-right: 20px;
+}
+
+.move-icon {
+  background-color: transparent;
+  height: 50px;
+  width: 50px;
+}
+
+
+
