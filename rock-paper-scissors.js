@@ -1,7 +1,7 @@
 let computerMove = '';
 let playerMove = '';
 
-const score = JSON.parse(localStorage.getItem('score')) || {
+let score = JSON.parse(localStorage.getItem('score')) || {
   wins: 0,
   ties: 0,
   losses: 0
@@ -59,9 +59,10 @@ function playGame() {
     }   
   }
 
+  localStorage.setItem('score', JSON.stringify(score));
+
   document.querySelector('.js-result').innerHTML = `Player chose ${playerMove} and computer chose ${computerMove}. ${result}`;
 
   document.querySelector('.js-score').innerHTML = `Wins: ${score.wins} Ties: ${score.ties} Losses: ${score.losses}`;
 }
 
-localStorage.setItem('score', JSON.stringify(score));
