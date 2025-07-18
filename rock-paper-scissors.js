@@ -1,9 +1,13 @@
 let computerMove = '';
 let playerMove = '';
 
-let wins = 0;
-let ties = 0;
-let losses = 0;
+const score = JSON.parse(localStorage.getItem('score')) || {
+  wins: 0,
+  ties: 0,
+  losses: 0
+};
+
+document.querySelector('.js-score').innerHTML = `Wins: ${score.wins} Ties: ${score.ties} Losses: ${score.losses}`;
 
 function chooseComputerMove() {
   let randNum = Math.random();
@@ -23,39 +27,41 @@ function playGame() {
   if (playerMove === 'rock') {
     if (computerMove === 'rock') {
       result = 'Tie!';
-      ties++;
+      score.ties++;
     } else if (computerMove === 'paper') {
       result = 'You lose!';
-      losses++;
+      score.losses++;
     } else if (computerMove === 'scissors') {
       result = 'You win!';
-      wins++;
+      score.wins++;
     }
   } else if (playerMove === 'paper') {
     if (computerMove === 'rock') {
       result = 'You win!';
-      wins++;
+      score.wins++;
     } else if (computerMove === 'paper') {
       result = 'Tie!';
-      ties++;
+      score.ties++;
     } else if (computerMove === 'scissors') {
       result = 'You lose!';
-      losses++;
+      score.losses++;
     }
   } else if (playerMove === 'scissors') {
     if (computerMove === 'rock') {
       result = 'You lose!';
-      losses++;
+      score.losses++;
     } else if (computerMove === 'paper') {
       result = 'You win!';
-      wins++;
+      score.wins++;
     } else if (computerMove === 'scissors') {
       result = 'Tie!';
-      ties++;
+      score.ties++;
     }   
   }
 
   document.querySelector('.js-result').innerHTML = `Player chose ${playerMove} and computer chose ${computerMove}. ${result}`;
 
-  document.querySelector('.js-score').innerHTML = `Wins: ${wins} Ties: ${ties} Losses: ${losses}`;
+  document.querySelector('.js-score').innerHTML = `Wins: ${score.wins} Ties: ${score.ties} Losses: ${score.losses}`;
 }
+
+localStorage.setItem('score', JSON.stringify(score));
