@@ -2,6 +2,8 @@
 
 This project implements a simple Rock-Paper-Scissors game where the player competes against the computer. 
 
+<p><img src="images/screenshot.png" alt="Rock Paper Scissors Screenshot" width="600px"></p>
+
 ## Features
 - A user interface that allows the player to choose rock, paper, or scissors
 - A computer oppnent that randomly selects its move
